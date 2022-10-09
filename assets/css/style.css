@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 1.6rem;
+
+    background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-03-mentalista.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    background-color: #000;
+}
+
+.showGifOnBody {
+    background-image: url("../img/firework-4.gif");
+}
+
+img {
+    max-width: 100%;
+}
+
+.home-section {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+}
+
+.home-section::before {
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.home-section .wrapper {
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+
+    position: relative;
+
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-section .wrapper .page-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+
+    color: #fff;
+}
+
+.home-section .wrapper .page-logo {
+    width: 19rem;
+    margin-bottom: 1rem;
+}
+
+.home-section .wrapper .page-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+
+    color: #fff;
+}
+
+.home-section .wrapper .container-form {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.home-section .wrapper .container-form .container-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.home-section .wrapper .container-form input {
+    width: 20rem;
+    height: 4rem;
+
+    font-size: 2rem;
+    padding: 0 1rem;
+    border-radius: 0.4rem;
+
+    outline: none;
+    border: none;
+}
+
+.home-section .wrapper .container-form .container-btn button {
+    font-size: 1.5rem;
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+.home-section .wrapper .container-form .container-btn button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.home-section .wrapper .tentativas {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    color: #fff;
+}
+
+.home-section .wrapper .resultado {
+    height: 4rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+
+    color: #fff;
+    text-align: center;
+}
+
+.home-section .wrapper .message {
+    font-size: 2rem;
+
+    color: #fff;
+}
+
+.home-section .wrapper .containerImg {
+    width: 100%;
+}
+
+.home-section .wrapper .containerImg .imgClass {
+    /* width: 100%; */
+}
+
+/* .home-section .alura-logo {
+    width: 4rem;
+
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+} */
