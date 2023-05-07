@@ -14,7 +14,7 @@
     <body>
         <main>
             <section class="home-section">
-                <div class="wrapper">
+                <div class="wrapper grid">
                     <h1 class="page-title">Mentalista</h1>
                     <img
                         src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-mentalista.svg"
@@ -24,34 +24,24 @@
                     <p class="page-subtitle">Digite um número de 0 a 10</p>
 
                     <form class="container-form">
-                        <input type="number" id="valor" />
+                        <input type="number" id="value" />
 
                         <div class="container-btn">
-                            <button type="submit" id="btn-chutar">
-                                Chutar
-                            </button>
-                            <button id="reiniciar">Reiniciar</button>
+                            <button type="submit" id="btn-kick">Chutar</button>
+                            <button id="restart">Reiniciar</button>
                         </div>
                     </form>
 
-                    <p class="tentativas">
-                        Número de tentativas: <span id="tentativas">3</span>
+                    <p class="attempts">
+                        Número de tentativas: <span id="attempts">3</span>
                     </p>
-                    <h2 class="resultado" id="resultado"></h2>
+                    <h2 class="result" id="result"></h2>
                     <p id="message" class="message"></p>
 
                     <audio
                         src="./assets/sounds/salamisound-8119443-fireworks-briefly-with.mp3"
                     ></audio>
                 </div>
-
-                <!-- <a href="https://alura.com.br/" target="_blank">
-                    <img
-                        src="https://www.alura.com.br/assets/img/home/alura-logo.svg"
-                        alt="logo da alura"
-                        class="alura-logo"
-                    />
-                </a> -->
             </section>
         </main>
 
