@@ -1,13 +1,10 @@
-const btnKick = document.getElementById("btn-chutar");
-const btnRestart = document.getElementById("reiniciar");
-const attempts = document.getElementById("tentativas");
+const btnKick = document.getElementById("btn-kick");
+const btnRestart = document.getElementById("restart");
+const attempts = document.getElementById("attempts");
 const message = document.getElementById("message");
-const result = document.getElementById("resultado");
+const result = document.getElementById("result");
 
-const containerImg = document.getElementById("containerImg");
-
-// const secretNumber = Math.floor(Math.random() * 11);
-const secretNumber = 0;
+const secretNumber = Math.floor(Math.random() * 11);
 let counterAttempts = 0;
 let showAttempts = 3;
 
@@ -18,59 +15,54 @@ const numberOfAttempts = () => {
 
         if (showAttempts === 0) {
             result.innerText = `Você atingiu o limite de tentativas!`;
+            message.innerText = `O número sorteado é ${secretNumber}`;
         }
     }, 1000);
 };
 
-const timeToClear = () => {
+const timeToClean = () => {
     setTimeout(() => {
-        const inputValue = (document.getElementById("valor").value = "");
+        document.getElementById("value").value = "";
         result.innerText = "";
     }, 1000);
 };
 
 const showCongratulationsOnScreen = () => {
-    const audio = document.querySelector("audio");
-
+    document.body.classList.toggle("showGifOnBody");
+    document.querySelector("audio").play();
     result.innerText = `Parabéns, você acertou!`;
-
-    const body = document.body;
-
-    body.classList.toggle("showGifOnBody");
-
-    audio.play();
 };
 
-btnKick.addEventListener("click", (event) => {
-    event.preventDefault();
+const checkNumber = (numericValue) => {
+    if (counterAttempts < 3) {
+        if (numericValue === secretNumber) {
+            showCongratulationsOnScreen();
+        } else if (numericValue > 10 || numericValue < 0) {
+            result.innerText = `Ops, digite um número entre 0 e 10`;
+        } else {
+            result.innerText = `Você errou!`;
+            counterAttempts++;
 
-    const inputValue = document.getElementById("valor").value;
-    const numericValue = parseInt(inputValue);
+            message.innerText = `O número sorteado é ${
+                secretNumber > numericValue ? "maior" : "menor"
+            } do que ${numericValue}`;
+
+            timeToClean();
+            numberOfAttempts();
+        }
+    }
+};
+
+btnKick.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const numericValue = parseInt(document.getElementById("value").value);
 
     if (numericValue || numericValue === 0) {
-        if (counterAttempts < 3) {
-            if (numericValue === secretNumber) {
-                showCongratulationsOnScreen();
-            } else if (numericValue > 10 || numericValue < 0) {
-                result.innerText = `Ops, digite um número entre 0 e 10`;
-            } else {
-                result.innerText = `Você errou!`;
-                counterAttempts++;
-
-                const conditionNumber =
-                    secretNumber > numericValue
-                        ? (message.innerText = `O número sorteado é maior do que ${numericValue}`)
-                        : (message.innerText = `O número sorteado é menor do que ${numericValue}`);
-
-                timeToClear();
-                numberOfAttempts();
-
-                console.log(secretNumber);
-            }
-        }
+        checkNumber(numericValue);
     } else {
         result.innerText = `Digite um número!`;
-        timeToClear();
+        timeToClean();
     }
 });
 
