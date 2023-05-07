@@ -17,54 +17,41 @@ body {
 
 body {
     font-size: 1.6rem;
-
     background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-03-mentalista.png");
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
-
     background-color: #000;
-}
-
-.showGifOnBody {
-    background-image: url("../img/firework-4.gif");
 }
 
 img {
     max-width: 100%;
 }
 
-.home-section {
+.grid {
     width: 100%;
-    height: 100vh;
+    max-width: 1364px;
+    margin: 0 auto;
+}
 
-    display: flex;
+.showGifOnBody {
+    background-image: url("../img/firework-4.gif");
 }
 
 .home-section::before {
     content: "";
-
     width: 100%;
     height: 100%;
-
     display: block;
-
     position: absolute;
     top: 0;
     left: 0;
-
     background-color: rgba(0, 0, 0, 0.8);
 }
 
 .home-section .wrapper {
-    width: 100%;
-    max-width: 98rem;
-    margin: 0 auto;
-
-    position: relative;
-
     height: 100vh;
-
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +61,6 @@ img {
 .home-section .wrapper .page-title {
     font-size: 4rem;
     margin-bottom: 1rem;
-
     color: #fff;
 }
 
@@ -86,14 +72,11 @@ img {
 .home-section .wrapper .page-subtitle {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-
     color: #fff;
 }
 
 .home-section .wrapper .container-form {
-    width: 100%;
     margin-bottom: 2rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +85,6 @@ img {
 }
 
 .home-section .wrapper .container-form .container-btn {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,21 +94,17 @@ img {
 .home-section .wrapper .container-form input {
     width: 20rem;
     height: 4rem;
-
     font-size: 2rem;
     padding: 0 1rem;
     border-radius: 0.4rem;
-
     outline: none;
     border: none;
 }
 
 .home-section .wrapper .container-form .container-btn button {
     font-size: 1.5rem;
-
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
-
     color: #000;
     background-color: #fff;
     cursor: pointer;
@@ -139,40 +117,56 @@ img {
     background-color: #000;
 }
 
-.home-section .wrapper .tentativas {
+.home-section .wrapper .attempts {
     font-size: 2rem;
     margin-bottom: 1rem;
-
     color: #fff;
 }
 
-.home-section .wrapper .resultado {
+.home-section .wrapper .result {
     height: 4rem;
     font-size: 3rem;
     margin-bottom: 2rem;
-
     color: #fff;
     text-align: center;
 }
 
 .home-section .wrapper .message {
     font-size: 2rem;
-
     color: #fff;
+    text-align: center;
 }
 
 .home-section .wrapper .containerImg {
     width: 100%;
 }
 
-.home-section .wrapper .containerImg .imgClass {
-    /* width: 100%; */
+@media screen and (max-width: 1440px) {
+    .grid {
+        max-width: 1136px;
+    }
 }
 
-/* .home-section .alura-logo {
-    width: 4rem;
+@media screen and (max-width: 1365px) {
+    .grid {
+        max-width: 1052px;
+    }
+}
 
-    position: relative;
-    top: 1rem;
-    right: 1rem;
-} */
+@media screen and (max-width: 1279px) {
+    .grid {
+        max-width: 765px;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .grid {
+        max-width: 375px;
+    }
+
+    .home-section .wrapper .result {
+        height: 1rem;
+        font-size: 2rem;
+    }
+}
